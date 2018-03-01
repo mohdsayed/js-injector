@@ -45,10 +45,8 @@
 		}
 	}
 
-	$( window ).on( 'load', () => {
-		setTimeout( () => {
+	setTimeout( () => {
 			new ACExtenstion();
-		}, 2000 );
-	} );
+	}, 2000 );
 
 })( jQuery );
