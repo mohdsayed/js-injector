@@ -6,6 +6,10 @@
 			this.billableMinutes = 0;
 			this.nonBillableMinutes = 0;
 
+			if ( ! this.constructor.canLoad() ) {
+				return;
+			}
+
 			this.addCalculationWrapper();
 
 			$( '#calculate-button' ).on( 'click', () => {
@@ -17,6 +21,10 @@
 			} );
 
 			this.addTotal();
+		}
+
+		static canLoad() {
+			return $( '#project_time' ).length || $( '#my_time_view' ).length;
 		}
 
 		setElementProps() {
